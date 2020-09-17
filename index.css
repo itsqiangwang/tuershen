@@ -4,7 +4,6 @@ html,body{
     box-sizing: border-box;
     animation: animBackgroundColor 180s infinite alternate;
     line-height: 1.1;
-    overflow: hidden;
     font-family: 'Noto Serif SC', serif;
 }
 
@@ -44,6 +43,7 @@ p{
     display: flex;
     flex-wrap: wrap;
     transition: 1s;
+    overflow: hidden;
 }
 
 /*-----------------------------fixed items / background / foreground-----------------------------*/
@@ -73,6 +73,8 @@ background pattern
 }
 
 .xi-container .xi-top svg{
+    width: 100%;
+    height: 100%;
     animation: animXi 180s infinite alternate;
 }
 
@@ -305,6 +307,8 @@ incense plate / wish form
     opacity: 0;
     transition: 1s;
     position: relative;
+    margin:0;
+    padding: 0;
 }
 
 .incense-plate-form .wish-form form{
@@ -313,6 +317,8 @@ incense plate / wish form
     position: relative;
     overflow: hidden;
     background-color: rgb(128,255,128);
+    margin:0;
+    padding: 0;
 }
 
 .incense-plate-form .wish-form form textarea{
@@ -331,7 +337,8 @@ incense plate / wish form
     font-family: 'Noto Sans SC', sans-serif;
     text-transform: uppercase;
     line-height: 1;
-    text-align: justify;
+    text-align: justify;/*
+    transition-delay: 0.5s;*/
 }
 
 .incense-plate-form:hover .wish-form form textarea{
@@ -350,6 +357,7 @@ incense plate / wish form
     bottom: 0;
     right: 0;
     padding: 0;
+    margin:0;
     text-align: justify;
     border: none;
     outline: none;
@@ -361,7 +369,8 @@ incense plate / wish form
     text-transform: uppercase;
     line-height: 1;
     overflow: hidden;
-    color: rgba(0,0,0,1);
+    color: rgba(0,0,0,1);/*
+    transition-delay: 0.5s;*/
 }
 
 .incense-plate-form:hover .wish-form button{
@@ -406,24 +415,6 @@ incense plate / wish form
 }
 
 @keyframes animNote {
-    /*0%{
-        background-color: rgb(128,128,255);
-    }
-    20%{
-        background-color: rgb(255,0,0);
-    }
-    40%{
-        background-color: rgb(255,255,0);
-    }
-    60%{
-        background-color: rgb(0,0,255);
-    }
-    80%{
-        background-color: rgb(255,0,255);
-    }
-    100%{
-        background-color: rgb(0,255,255);
-    }*/
     0%{
         background-color: rgb(128,128,255);
     }
@@ -433,7 +424,7 @@ incense plate / wish form
     100%{
         background-color: rgb(255,0,0);
     }
-    
+
 }
 
 .incense-plate-form .wish-form button:hover + .note{
@@ -504,6 +495,7 @@ svg{
 
 .banner-left{
     width: 33.33333%;
+    height: 100%;
     animation: animBannerLeftRight 180s infinite alternate;
     position: relative;
     z-index: 1;
@@ -532,6 +524,7 @@ svg{
 
 .banner-middle{
     width: 33.33333%;
+    height: 100%;
     transition: 1s;
     overflow: hidden;
     position: relative;
@@ -675,6 +668,7 @@ svg{
 
 .banner-right{
     width: 33.33333%;
+    height: 100%;
     position: relative;
     z-index: 1;
     animation: animBannerLeftRight 180s infinite alternate;
@@ -914,39 +908,6 @@ for tale on splitting peach
     }
 }
 
-.tale-peach .tale-title-chinese .peach-shadow,
-.tale-peach .tale-english .peach-shadow{
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    position: sticky;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: grey;
-    transform: scale(0.75, 0.1);
-    transform-origin: bottom;
-    filter: blur(15px);
-    transition: 1s;
-}
-
-.tale-peach .tale-title-chinese .peach-shadow{
-    opacity: 1;
-}
-
-.tale-peach:hover .tale-title-chinese .peach-shadow{
-    opacity: 0.5;
-}
-
-.tale-peach .tale-english .peach-shadow{
-    opacity: 0;
-}
-
-.tale-peach:hover .tale-english .peach-shadow{
-    opacity: 0.5;
-}
-
 /*
 for tale on weep fish
 */
@@ -960,24 +921,13 @@ for tale on weep fish
     z-index: 1;
 }
 
-/*.tale-fish .fish-shadow{
-    position: absolute;
-    bottom: 0;
-    fill: gray;
-    height: 10%;
-    filter: blur(5px);
-    z-index: 1;
-}*/
-
-.tale-fish .fish svg,
-.tale-fish .fish-shadow svg{
+.tale-fish .fish svg{
     position: absolute;
     bottom: 0;
     transition: 1s;
 }
 
-.tale-fish:hover .fish svg,
-.tale-fish:hover .fish-shadow svg{
+.tale-fish:hover .fish svg{
     width: 200%;
     opacity: 0.5;
 }
@@ -1141,6 +1091,7 @@ for tale on cutting sleeve
     flex-wrap: nowrap;
     animation: animTableBorderColor 180s infinite alternate;
     text-align: justify;
+    border-top: 1px solid rgb(255,0,0);
 }
 
 @keyframes animTableBorderColor{
@@ -1179,7 +1130,7 @@ for tale on cutting sleeve
     top: 0;
     left: 0;
     z-index: -1;
-    width: 25%;
+    width: 25.1%;
     height: 100%;
     animation: animSleeve 180s infinite alternate;
 }
@@ -1251,7 +1202,7 @@ for tale on cutting sleeve
     top: 0;
     right: 0;
     animation: animSleeve 180s infinite alternate;
-    width: 51%;
+    width: 50.1%;
     height: 100%;
     z-index: -1;
     transition: 1s;
@@ -1261,103 +1212,110 @@ for tale on cutting sleeve
     height: 0;
 }
 
+/*--------------------different screens--------------------*/
+
 /*
 mobile view
 */
 @media only screen and (max-width:480px) {
-.tale-peach,
-.tale-fish{
-    flex-wrap: wrap;
-}
+    .tale-peach,
+    .tale-fish{
+        flex-wrap: wrap;
+    }
 
-.tale-fish .tale-title-chinese{
-    order: 2;
-}
+    .tale-fish .tale-title-chinese{
+        order: 2;
+    }
 
-.tale-peach > div,
-.tale-fish > div{
-    width: 100%;
-    height: 50%;
-}
+    .tale-peach > div,
+    .tale-fish > div{
+        width: 100%;
+        height: 50%;
+    }
 
-.tale-fish .fish svg{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    transform: translateY(100%);
-}
+    .tale-fish .fish svg{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        transform: translateY(100%);
+    }
 
-.tale-fish:hover .fish svg{
-    width: 100%;
-    transform: scaleY(2);
-    transform-origin: top;
-}
+    .tale-fish:hover .fish svg{
+        width: 100%;
+        transform: scaleY(2);
+        transform-origin: top;
+    }
 
-.tale-peach .tale-english{
-    border-right: 0.1px solid transparent;
-}
+    .tale-peach .tale-english{
+        border-right: 0.1px solid transparent;
+    }
 
-.tale-peach:hover .tale-english{
-    border-right: 1px solid black;
-}
+    .tale-peach:hover .tale-english{
+        border-right: 1px solid black;
+    }
 
-.tale-peach .tale-title-chinese{
-    border-left: 0px solid transparent;
-    border-top: 0.1px solid transparent;
-    border-right: 0.1px solid transparent;
-}
+    .tale-peach .tale-title-chinese{
+        border-left: 0px solid transparent;
+        border-top: 0.1px solid transparent;
+        border-right: 0.1px solid transparent;
+    }
 
-.tale-peach:hover .tale-title-chinese{
-    border-left: 0px solid transparent;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-}
+    .tale-peach:hover .tale-title-chinese{
+        border-left: 0px solid transparent;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
 
-.tale-fish .tale-english{
-    border-left: 0.1px solid transparent;
-}
+    .tale-fish .tale-english{
+        border-left: 0.1px solid transparent;
+    }
 
-.tale-fish:hover .tale-english{
-    border-left: 1px solid black;
-}
+    .tale-fish:hover .tale-english{
+        border-left: 1px solid black;
+    }
 
-.tale-fish .tale-title-chinese{
-    border-left: 0.1px solid transparent;
-    border-top: 0.1px solid transparent;
-    border-right: 0px solid transparent;
-}
+    .tale-fish .tale-title-chinese{
+        border-left: 0.1px solid transparent;
+        border-top: 0.1px solid transparent;
+        border-right: 0px solid transparent;
+    }
 
-.tale-fish:hover .tale-title-chinese{
-    border-left: 1px solid black;
-    border-top: 1px solid black;
-    border-right: 0px solid transparent;
-}
+    .tale-fish:hover .tale-title-chinese{
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+        border-right: 0px solid transparent;
+    }
 
-.banner-middle-content .rabbit-tale{
-    flex-wrap: wrap;
-}
+    .banner-middle-content .rabbit-tale{
+        flex-wrap: wrap;
+    }
 
-.banner-middle-content p{
-    width: 100%;
-    height: 50%;
-}
+    .banner-middle-content p{
+        width: 100%;
+        height: 50%;
+    }
 
-.banner-middle-content p:nth-of-type(1){
-    border-right: 0px;
-}
+    .banner-middle-content p:nth-of-type(1){
+        border-right: 0px;
+    }
 
-.incense-plate-form:hover .wish-form form textarea{
-    font-size: 32px;
-}
+    .incense-plate-form .wish-form form textarea,
+    .incense-plate-form .wish-form button{
+        transition: 0s;
+    }
 
-.incense-plate-form:hover .wish-form button,
-.incense-plate-form .wish-form button:hover::after{
-    font-size: 16px;
-}
+    .incense-plate-form:hover .wish-form form textarea{
+        font-size: 32px;
+    }
 
-.wish-form .note{
-    font-size: 32px;
-}
+    .incense-plate-form:hover .wish-form button,
+    .incense-plate-form .wish-form button:hover::after{
+        font-size: 16px;
+    }
+
+    .wish-form .note{
+        font-size: 32px;
+    }
 }
 
 /*
@@ -1365,97 +1323,101 @@ tablet view
 */
 @media only screen and (min-width: 481px) and (max-width:768px) {
     .tale-peach,
-.tale-fish{
-    flex-wrap: wrap;
-}
+    .tale-fish{
+        flex-wrap: wrap;
+    }
 
-.tale-fish .tale-title-chinese{
-    order: 2;
-}
+    .tale-fish .tale-title-chinese{
+        order: 2;
+    }
 
-.tale-peach > div,
-.tale-fish > div{
-    width: 100%;
-    height: 50%;
-}
+    .tale-peach > div,
+    .tale-fish > div{
+        width: 100%;
+        height: 50%;
+    }
 
-.tale-fish .fish svg{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    transform: translateY(100%);
-}
+    .tale-fish .fish svg{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        transform: translateY(100%);
+    }
 
-.tale-fish:hover .fish svg{
-    width: 100%;
-    transform: scaleY(2);
-    transform-origin: top;
-}
+    .tale-fish:hover .fish svg{
+        width: 100%;
+        transform: scaleY(2);
+        transform-origin: top;
+    }
 
-.tale-peach .tale-english{
-    border-right: 0.1px solid transparent;
-}
+    .tale-peach .tale-english{
+        border-right: 0.1px solid transparent;
+    }
 
-.tale-peach:hover .tale-english{
-    border-right: 1px solid black;
-}
+    .tale-peach:hover .tale-english{
+        border-right: 1px solid black;
+    }
 
-.tale-peach .tale-title-chinese{
-    border-left: 0px solid transparent;
-    border-top: 0.1px solid transparent;
-    border-right: 0.1px solid transparent;
-}
+    .tale-peach .tale-title-chinese{
+        border-left: 0px solid transparent;
+        border-top: 0.1px solid transparent;
+        border-right: 0.1px solid transparent;
+    }
 
-.tale-peach:hover .tale-title-chinese{
-    border-left: 0px solid transparent;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-}
+    .tale-peach:hover .tale-title-chinese{
+        border-left: 0px solid transparent;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+    }
 
-.tale-fish .tale-english{
-    border-left: 0.1px solid transparent;
-}
+    .tale-fish .tale-english{
+        border-left: 0.1px solid transparent;
+    }
 
-.tale-fish:hover .tale-english{
-    border-left: 1px solid black;
-}
+    .tale-fish:hover .tale-english{
+        border-left: 1px solid black;
+    }
 
-.tale-fish .tale-title-chinese{
-    border-left: 0.1px solid transparent;
-    border-top: 0.1px solid transparent;
-    border-right: 0px solid transparent;
-}
+    .tale-fish .tale-title-chinese{
+        border-left: 0.1px solid transparent;
+        border-top: 0.1px solid transparent;
+        border-right: 0px solid transparent;
+    }
 
-.tale-fish:hover .tale-title-chinese{
-    border-left: 1px solid black;
-    border-top: 1px solid black;
-    border-right: 0px solid transparent;
-}
+    .tale-fish:hover .tale-title-chinese{
+        border-left: 1px solid black;
+        border-top: 1px solid black;
+        border-right: 0px solid transparent;
+    }
 
-.banner-middle-content .rabbit-tale{
-    flex-wrap: wrap;
-}
+    .banner-middle-content .rabbit-tale{
+        flex-wrap: wrap;
+    }
 
-.banner-middle-content p{
-    width: 100%;
-    height: 50%;
-}
+    .banner-middle-content p{
+        width: 100%;
+        height: 50%;
+    }
 
-.banner-middle-content p:nth-of-type(1){
-    border-right: 0px;
-}
+    .banner-middle-content p:nth-of-type(1){
+        border-right: 0px;
+    }
 
-.incense-plate-form:hover .wish-form form textarea{
-    font-size: 32px;
-}
+    .incense-plate-form .wish-form form textarea,
+    .incense-plate-form .wish-form button{
+        transition: 0s;
+    }
 
-.incense-plate-form:hover .wish-form button,
-.incense-plate-form .wish-form button:hover::after{
-    font-size: 16px;
-}
+    .incense-plate-form:hover .wish-form form textarea{
+        font-size: 32px;
+    }
 
-.wish-form .note{
-    font-size: 32px;
-}
+    .incense-plate-form:hover .wish-form button,
+    .incense-plate-form .wish-form button:hover::after{
+        font-size: 16px;
+    }
 
+    .wish-form .note{
+        font-size: 32px;
+    }
 }
