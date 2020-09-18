@@ -139,8 +139,8 @@ https://www.youtube.com/watch?v=-KrsH0wuanY&ab_channel=OnlineTutorials
     width: 50px;
     height: 50px;
     background: grey;
-    border-radius: 100%;/*
-    mix-blend-mode: difference;*/
+    border-radius: 100%;
+    mix-blend-mode: difference;
 }
 
 .incense-smoke ul li:nth-child(even){
@@ -1471,5 +1471,18 @@ tablet view
     .incense-smoke ul li{
         width: 25px;
         height: 25px;
+    }
+
+    .tale-peach .tale-english .peach{
+        width: 40%;
+        height: 12.5%;
+        top: 50%;
+    }
+
+    .tale-peach .tale-title-chinese .peach{
+        width: 40%;
+        height: 12.5%;
+        top: 62.5%;
+        left: 0;
     }
 }
