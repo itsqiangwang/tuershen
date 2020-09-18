@@ -64,7 +64,7 @@ background pattern
     top: 0;
     left: 0;
     width: 20vw;
-    height: 75vh;
+    height: 75%;
     animation: animXi 180s infinite alternate;
 }
 
@@ -73,7 +73,7 @@ background pattern
     top: 0;
     right: 0;
     width: 20vw;
-    height: 75vh;
+    height: 75%;
     animation: animXi 180s infinite alternate;
 }
 
@@ -227,6 +227,7 @@ incense sticks
 
 .incense-stick{
     height: 50%;
+    width: 20%;
     position: fixed;
     bottom: 0;
     z-index: 2;
@@ -237,7 +238,7 @@ incense sticks
 }
 
 .incense-stick div{
-    width: 1vw;
+    width: 1.2vw;
     height: 100%;
     margin: 0 0.2vw;
     display: inline-block;
@@ -842,13 +843,12 @@ for tale on splitting peach
 .tale-peach .tale-title-chinese .title{
     opacity: 1;
     transition: 1s;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: 50%;
     z-index: 1;
     display: flex;
     flex-wrap: nowrap;
-    width: 100%;
-    height: 0;
+    width: 20%;
 }
 
 .tale-peach:hover .tale-title-chinese .title{
@@ -1039,14 +1039,14 @@ for tale on weep fish
 
 .tale-fish .tale-title-chinese .title{
     opacity: 1;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: 50%;
     transition: 1s;
     height: 0;
     z-index: 1;
     display: flex;
     flex-wrap: nowrap;
-    width: 100%;
+    width: 20%;
 }
 
 .tale-fish .tale-title-chinese .title div{
@@ -1338,10 +1338,6 @@ mobile view
         font-size: 32px;
     }
 
-    .incense-stick div{
-        width: 0.5vw;
-    }
-
     .incense-smoke ul li{
         width: 25px;
         height: 25px;
@@ -1358,6 +1354,16 @@ mobile view
         height: 12.5%;
         top: 62.5%;
         left: 0;
+    }
+
+    .tale-peach .tale-title-chinese .title{
+        top: 62.5%;
+        width: 40%;
+    }
+
+    .tale-fish .tale-title-chinese .title{
+        top: 62.5%;
+        width: 40%;
     }
 }
 
@@ -1464,10 +1470,6 @@ tablet view
         font-size: 32px;
     }
 
-    .incense-stick div{
-        width: 0.5vw;
-    }
-
     .incense-smoke ul li{
         width: 25px;
         height: 25px;
@@ -1484,5 +1486,15 @@ tablet view
         height: 12.5%;
         top: 62.5%;
         left: 0;
+    }
+
+    .tale-peach .tale-title-chinese .title{
+        top: 62.5%;
+        width: 40%;
+    }
+
+    .tale-fish .tale-title-chinese .title{
+        top: 62.5%;
+        width: 40%;
     }
 }
