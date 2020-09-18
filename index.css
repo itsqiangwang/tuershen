@@ -54,28 +54,26 @@ p{
 background pattern
 */
 
-.xi-container{
+/*.xi-container{
+    width: 100vw;
+    height: 100vh;
+}*/
+
+.xi-container .xi-left{
     position: fixed;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 75vh;
+    animation: animXi 180s infinite alternate;
 }
 
-.xi-container .xi-top{
-    width: 50%;
-    height: 50%;
-}
-
-.xi-container .xi-empty{
-    width: 50%;
-    height: 50%;
-}
-
-.xi-container .xi-top svg{
-    width: 100%;
-    height: 100%;
+.xi-container .xi-right{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20vw;
+    height: 75vh;
     animation: animXi 180s infinite alternate;
 }
 
@@ -1345,7 +1343,7 @@ mobile view
     }
 
     .incense-stick div{
-        width: 0.8vw;
+        width: 0.5vw;
     }
 
     .incense-smoke ul li{
@@ -1458,7 +1456,7 @@ tablet view
     }
 
     .incense-stick div{
-        width: 0.8vw;
+        width: 0.5vw;
     }
 
     .incense-smoke ul li{
