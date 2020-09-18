@@ -710,7 +710,8 @@ svg{
 /*-----------------------------middle section / tales 1 + 2 / peach + fish-----------------------------*/
 
 .tabletop-container{
-    position: relative;
+    position: fixed;
+    top: 50%;
     z-index: 1;
     width: 100%;
     height: 25%;
@@ -1095,10 +1096,11 @@ for tale on cutting sleeve
 */
 
 .tableleg-container{
-    position: relative;
+    position: fixed;
     z-index: 1;
     width: 100%;
     height: 25%;
+    bottom: 0;
 }
 
 .tale-sleeve{
