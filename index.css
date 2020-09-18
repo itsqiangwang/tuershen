@@ -120,7 +120,7 @@ https://www.youtube.com/watch?v=-KrsH0wuanY&ab_channel=OnlineTutorials
 */
 
 .incense-smoke {
-    height: 50vh;
+    height: 50%;
     position: fixed;
     left: 48%;
     transform: translateX(-48%);
