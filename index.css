@@ -141,8 +141,8 @@ https://www.youtube.com/watch?v=-KrsH0wuanY&ab_channel=OnlineTutorials
     width: 50px;
     height: 50px;
     background: grey;
-    border-radius: 100%;
-    mix-blend-mode: difference;
+    border-radius: 100%;/*
+    mix-blend-mode: difference;*/
 }
 
 .incense-smoke ul li:nth-child(even){
@@ -1347,6 +1347,11 @@ mobile view
     .incense-stick div{
         width: 0.8vw;
     }
+
+    .incense-smoke ul li{
+        width: 25px;
+        height: 25px;
+    }
 }
 
 /*
@@ -1454,5 +1459,10 @@ tablet view
 
     .incense-stick div{
         width: 0.8vw;
+    }
+
+    .incense-smoke ul li{
+        width: 25px;
+        height: 25px;
     }
 }
