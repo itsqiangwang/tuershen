@@ -1343,6 +1343,10 @@ mobile view
     .wish-form .note{
         font-size: 32px;
     }
+
+    .incense-stick div{
+        width: 0.8vw;
+    }
 }
 
 /*
@@ -1446,5 +1450,9 @@ tablet view
 
     .wish-form .note{
         font-size: 32px;
+    }
+
+    .incense-stick div{
+        width: 0.8vw;
     }
 }
