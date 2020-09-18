@@ -5,6 +5,7 @@ html,body{
     animation: animBackgroundColor 180s infinite alternate;
     line-height: 1.1;
     font-family: 'Noto Serif SC', serif;
+    overflow: hidden;
 }
 
 @keyframes animBackgroundColor{
