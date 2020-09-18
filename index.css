@@ -469,6 +469,7 @@ svg{
     height: 50vh;
     animation: animBannerMiddle 180s infinite alternate;
     z-index: 1;
+    overflow-y: hidden;
 }
 
 @keyframes animBannerMiddle{
