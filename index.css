@@ -441,11 +441,13 @@ svg{
 }
 
 .banner-container{
-    position: relative;
+    position: fixed;
+    top: 0;
     width: 100%;
     height: 50%;
     display: flex;
     flex-wrap: nowrap;
+    z-index: 3;
 }
 
 .banner-empty{
@@ -461,13 +463,11 @@ svg{
 }
 
 .banner-center-background{
-    position: absolute;
+    position: fixed;
     top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
+    right: 20vw;
+    width: 60vw;
+    height: 50vh;
     animation: animBannerMiddle 180s infinite alternate;
     z-index: 1;
 }
@@ -528,7 +528,6 @@ svg{
     transition: 1s;
     overflow: hidden;
     position: relative;
-    z-index: 2;
 }
 
 .banner-middle:hover{
@@ -546,6 +545,7 @@ svg{
 }
 
 .banner-middle > svg{
+    mix-blend-mode: multiply;
     animation: animBannerMiddleText 180s infinite alternate;
 }
 
