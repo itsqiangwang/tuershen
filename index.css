@@ -4,7 +4,7 @@ html,body{
     box-sizing: border-box;
     animation: animBackgroundColor 180s infinite alternate;
     line-height: 1.1;
-    font-family: 'Noto Serif SC', serif;
+    font-family: 'Noto Sans SC', sans-serif;
     overflow: hidden;
 }
 
@@ -27,11 +27,6 @@ html,body{
     100%{
         background-color: rgb(127,124,0);
     }
-}
-
-p{
-    margin: 0;
-    padding: 0;
 }
 
 ::-webkit-scrollbar{
@@ -227,7 +222,7 @@ incense sticks
 
 .incense-stick{
     height: 50%;
-    width: 20%;
+    width: auto;
     position: fixed;
     bottom: 0;
     z-index: 2;
@@ -334,11 +329,11 @@ incense plate / wish form
     overflow-y: scroll;
     padding: 0;
     margin: 0;
-    font-family: 'Noto Sans SC', sans-serif;
     text-transform: uppercase;
     line-height: 1;
     text-align: justify;/*
     transition-delay: 0.5s;*/
+    font-family: 'Noto Sans SC', sans-serif;
 }
 
 .incense-plate-form:hover .wish-form form textarea{
@@ -350,6 +345,7 @@ incense plate / wish form
     opacity: 0.25;
     line-height: 1;
     text-align: justify;
+    font-family: 'Noto Sans SC', sans-serif;
 }
 
 .incense-plate-form .wish-form button{
@@ -365,7 +361,6 @@ incense plate / wish form
     transition: 1s;
     opacity: 0;
     background-color: rgb(128,128,255);
-    font-family: 'Noto Sans SC', sans-serif;
     text-transform: uppercase;
     line-height: 1;
     overflow: hidden;
@@ -406,7 +401,6 @@ incense plate / wish form
     opacity: 1;
     text-transform: uppercase;
     font-size: 72px;
-    font-family: 'Noto Sans SC', sans-serif;
     text-align: justify;
     animation: animNote 6s infinite alternate;
     line-height: 1;
@@ -529,24 +523,28 @@ svg{
     transition: 1s;
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .banner-middle:hover{
     width: 100%;
-    overflow-y: scroll;
 }
 
-.banner-middle .banner-transform{
+.banner-middle div{
+    width: 100%;
+}
+
+.banner-middle-title{
     height: 100%;
     transition: 1s;
 }
 
-.banner-middle:hover .banner-transform{
-    height: 90%;
+.banner-middle:hover .banner-middle-title{
+    height: 50%;
 }
 
-.banner-middle > svg{
-    mix-blend-mode: multiply;
+.banner-middle-title svg{
     animation: animBannerMiddleText 180s infinite alternate;
 }
 
@@ -572,106 +570,58 @@ svg{
 }
 
 .banner-middle-content{
-    width: 100%;
-    height: 100%;
+    height: 0%;
     transition: 1s;
-    display: none;
+    opacity: 0;
 }
 
 .banner-middle:hover .banner-middle-content{
-    display: block;
+    opacity: 1;
+    height: 50%;
 }
 
 .banner-middle-content .rabbit-tale{
     width: 100%;
-    height: 50%;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.banner-middle-content .rabbit-tale p span{
-    width: 100%;
-    height: 1px;
-    background-color: black;
-    display: block;
-}
-
-.banner-middle-content p{
-    text-align: justify;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    display: block;
-    width: 50%;
     height: 100%;
-    overflow-y: scroll;
+    display: flex;
+    flex-wrap: nowrap; 
     border-top: 1px solid black;
 }
 
-.banner-middle-content p:nth-of-type(1){
-    border-right: 1px solid black;
-}
-
-.banner-middle-content .rabbit-god{
-    position: relative;
-    width: auto;
+.banner-middle-content .rabbit-tale div{
+    width: 50%;
     height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.banner-middle-content .rabbit-god svg{
-    stroke: black;
-    stroke-width: 1;
-    /*animation: animRabbit 5s infinite alternate;*/
+.banner-middle-content .rabbit-tale div:nth-of-type(1){
+    text-align: left;
 }
 
-.banner-middle-content .rabbit-god svg .ear-left{
-    animation: animRabbitEar 1.5s infinite alternate;
+.banner-middle-content .rabbit-tale div:nth-of-type(2){
+    text-align: right;
+    border-left: 1px solid black;
 }
 
-.banner-middle-content .rabbit-god svg .ear-right{
-    animation: animRabbitEar 1.5s infinite alternate;
+.banner-middle-content .rabbit-tale div a{
+    transition: 1s;
+    font-size: 0px;
+    color: black;
+    text-decoration: none;
+    opacity: 1;
 }
 
-@keyframes animRabbitEar{
-    from{
-        fill: rgba(255,128,128,1);
-    }
-    to{
-        fill: rgba(255,128,128,0.25);
-    }
+.banner-middle-content .rabbit-tale div a:hover{
+    opacity: 0.25;
 }
 
-.banner-middle-content .rabbit-god svg .cheek-left{
-    animation: animRabbitCheek 2s infinite alternate;
-    mix-blend-mode: multiply;
-}
-
-.banner-middle-content .rabbit-god svg .cheek-right{
-    animation: animRabbitCheek 2s infinite alternate;
-    mix-blend-mode: multiply;
-}
-
-@keyframes animRabbitCheek{
-    from{
-        fill: rgba(255,255,0,1);
-    }
-    to{
-        fill: rgba(255,255,0,0.25);
-    }
-}
-
-.banner-middle-content .rabbit-god svg .face{
-    animation: animRabbitFace 2.5s infinite alternate;
-    mix-blend-mode: difference;
-}
-
-@keyframes animRabbitFace{
-    from{
-        fill: rgba(0,127,124,1);
-    }
-    to{
-        fill: rgba(255,255,0,0.25);
-    }
+.banner-middle:hover .banner-middle-content .rabbit-tale div a{
+    font-size: 16px;
 }
 
 .banner-right{
@@ -736,9 +686,7 @@ svg{
     height: 100%;
 }
 
-.title{/*
-    font-size: 24px;*/
-    font-family: 'Noto Sans SC', sans-serif;
+.title{
     text-transform: uppercase;
 }
 
@@ -794,19 +742,36 @@ for tale on splitting peach
 
 .tale-peach:hover .tale-english{
     border-top-left-radius: 0%;
-    overflow-y: scroll;
     opacity: 1;
 }
 
-.tale-peach .tale-english div p{
+.tale-peach .tale-english div div{
     opacity: 0;
     transition: 1s;
     position: absolute;
     top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.tale-peach:hover .tale-english div p{
+.tale-peach:hover .tale-english div div{
     opacity: 1;
+}
+
+.tale-peach .tale-english div div a{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    opacity: 1;
+    transition: 1s;
+    font-size: 16px;
+}
+
+.tale-peach .tale-english div div a:hover{
+    opacity: 0.25;
 }
 
 .tale-peach .tale-english .peach{
@@ -834,8 +799,6 @@ for tale on splitting peach
 }
 
 .tale-peach:hover .tale-title-chinese{
-    overflow-x: hidden;
-    overflow-y: scroll;
     border-right: 1px solid black;
     border-left: 1px solid black;
 }
@@ -864,6 +827,8 @@ for tale on splitting peach
 }
 
 .tale-peach .tale-title-chinese .tale-chinese{
+    width: 100%;
+    height: 100%;
     opacity: 0;
     transition: 1s;
     position: absolute;
@@ -875,11 +840,25 @@ for tale on splitting peach
     opacity: 1;
 }
 
-.tale-peach .tale-title-chinese .tale-chinese p span{
+.tale-peach .tale-title-chinese .tale-chinese div{
     width: 100%;
-    height: 1px;
-    background-color: black;
-    display: block;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tale-peach .tale-title-chinese .tale-chinese div a{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    opacity: 1;
+    transition: 1s;
+    font-size: 16px;
+}
+
+.tale-peach .tale-title-chinese .tale-chinese div a:hover{
+    opacity: 0.25;
 }
 
 .tale-peach .tale-title-chinese .peach{
@@ -1007,13 +986,11 @@ for tale on weep fish
 .tale-fish .tale-title-chinese{
     animation: animSleeve 180s infinite alternate;
     transition: 1s;
-    overflow: hidden;
     border-left: 0.1px solid transparent;
     border-right: 0.1px solid transparent;
 }
 
 .tale-fish:hover .tale-title-chinese{
-    overflow-y: scroll;
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
@@ -1024,17 +1001,33 @@ for tale on weep fish
     position: absolute;
     top: 0;
     transition: 1s;
+    width: 100%;
+    height: 100%;
 }
 
 .tale-fish:hover .tale-title-chinese .tale-chinese{
     opacity: 1;
 }
 
-.tale-fish .tale-title-chinese .tale-chinese p span{
+.tale-fish .tale-title-chinese .tale-chinese div{
     width: 100%;
-    height: 1px;
-    background-color: black;
-    display: block;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tale-fish .tale-title-chinese .tale-chinese div a{
+    text-decoration: none;
+    text-align: left;
+    color: black;
+    opacity: 1;
+    transition: 1s;
+    font-size: 16px;
+}
+
+.tale-fish .tale-title-chinese .tale-chinese div a:hover{
+    opacity: 0.25;
 }
 
 .tale-fish .tale-title-chinese .title{
@@ -1065,22 +1058,38 @@ for tale on weep fish
     border-top-right-radius: 100%;
     transition: 1s;
     animation: animSleeve 180s infinite alternate;
-    overflow: hidden;
 }
 
 .tale-fish:hover .tale-english{
     border-top-right-radius: 0%;
-    overflow-y: scroll;
 }
 
-.tale-fish .tale-english p{
+.tale-fish .tale-english div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 2;
     opacity: 0;
     transition: 1s;
 }
 
-.tale-fish:hover .tale-english p{
+.tale-fish .tale-english div a{
+    text-decoration: none;
+    text-align: right;
+    color: black;
+    opacity: 1;
+    transition: 1s;
+    font-size: 16px;
+}
+
+.tale-fish .tale-english div a:hover{
+    opacity: 0.25;
+}
+
+.tale-fish:hover .tale-english div{
     opacity: 1;
 }
 
@@ -1131,12 +1140,6 @@ for tale on cutting sleeve
 
 .tale-sleeve > div{
     width: 50%;
-    overflow: hidden;
-}
-
-.tale-sleeve:hover .tale-title-english,
-.tale-sleeve:hover .tale-title-chinese{
-    overflow-y: scroll;
 }
 
 .tale-sleeve .tale-title-english .sleeve-uncut{
@@ -1182,10 +1185,28 @@ for tale on cutting sleeve
     transition: 1s;
     position: relative;
     z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tale-sleeve:hover .tale-title-english .tale-english{
     opacity: 1;
+}
+
+.tale-sleeve .tale-title-english .tale-english div a{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    opacity: 1;
+    transition: 1s;
+    font-size: 16px;
+}
+
+.tale-sleeve .tale-title-english .tale-english div a:hover{
+    opacity: 0.25;
 }
 
 .tale-sleeve .tale-title-chinese .title{
@@ -1205,17 +1226,27 @@ for tale on cutting sleeve
     opacity: 0;
     transition: 1s;
     color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tale-sleeve:hover .tale-title-chinese .tale-chinese{
     opacity: 1;
 }
 
-.tale-sleeve .tale-title-chinese .tale-chinese p span{
-    width: 100%;
-    height: 1px;
-    background-color: rgb(240,240,240);
-    display: block;
+.tale-sleeve .tale-title-chinese .tale-chinese div a{
+    text-decoration: none;
+    color: black;
+    opacity: 1;
+    transition: 1s;
+    font-size: 16px;
+}
+
+.tale-sleeve .tale-title-chinese .tale-chinese div a:hover{
+    opacity: 0.25;
 }
 
 .tale-sleeve .tale-title-chinese .sleeve-cut{
@@ -1238,7 +1269,7 @@ for tale on cutting sleeve
 /*
 mobile view
 */
-@media only screen and (max-width:480px) {
+@media only screen and (max-width:375px) {
     .tale-peach,
     .tale-fish{
         flex-wrap: wrap;
@@ -1307,19 +1338,6 @@ mobile view
         border-right: 0px solid transparent;
     }
 
-    .banner-middle-content .rabbit-tale{
-        flex-wrap: wrap;
-    }
-
-    .banner-middle-content p{
-        width: 100%;
-        height: 50%;
-    }
-
-    .banner-middle-content p:nth-of-type(1){
-        border-right: 0px;
-    }
-
     .incense-plate-form .wish-form form textarea,
     .incense-plate-form .wish-form button{
         transition: 0s;
@@ -1336,11 +1354,6 @@ mobile view
 
     .wish-form .note{
         font-size: 32px;
-    }
-
-    .incense-smoke ul li{
-        width: 25px;
-        height: 25px;
     }
 
     .tale-peach .tale-english .peach{
@@ -1370,7 +1383,7 @@ mobile view
 /*
 tablet view
 */
-@media only screen and (min-width: 481px) and (max-width:768px) {
+@media only screen and (min-width: 376px) and (max-width:768px) {
     .tale-peach,
     .tale-fish{
         flex-wrap: wrap;
@@ -1439,19 +1452,6 @@ tablet view
         border-right: 0px solid transparent;
     }
 
-    .banner-middle-content .rabbit-tale{
-        flex-wrap: wrap;
-    }
-
-    .banner-middle-content p{
-        width: 100%;
-        height: 50%;
-    }
-
-    .banner-middle-content p:nth-of-type(1){
-        border-right: 0px;
-    }
-
     .incense-plate-form .wish-form form textarea,
     .incense-plate-form .wish-form button{
         transition: 0s;
@@ -1468,11 +1468,6 @@ tablet view
 
     .wish-form .note{
         font-size: 32px;
-    }
-
-    .incense-smoke ul li{
-        width: 25px;
-        height: 25px;
     }
 
     .tale-peach .tale-english .peach{
