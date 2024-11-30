@@ -384,9 +384,9 @@ incense plate / wish form
 }
 
 .incense-plate-form .wish-form button:hover::after{
-    content: '>>>';
+    /* content: '...';
     padding: 0;
-    margin: 0;
+    margin: 0; */
 }
 
 .wish-form .note{
@@ -424,7 +424,7 @@ incense plate / wish form
 .incense-plate-form .wish-form button:hover + .note{
     opacity: 1;
     /*height: 100%;*/
-    transform: scale(1);
+    /* transform: scale(1); */
 }
 
 /*-----------------------------top section / banners-----------------------------*/
