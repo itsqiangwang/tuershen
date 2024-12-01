@@ -1,17 +1,17 @@
 document.getElementById("downloadButton").addEventListener("click", function () {
     try {
-        // Get the current date and time
+        // Get the current local date and time
         const now = new Date();
-        
+
         // Format the date for the file name (YYYYMMDD)
-        const dateForFilename = now.toISOString().split("T")[0].replace(/-/g, ''); // YYYYMMDD
-        
-        // Format the time for the file name (HHMMSS) without AM/PM (24-hour format)
+        const dateForFilename = now.toLocaleDateString('en-CA').replace(/-/g, ''); // YYYYMMDD (using Canadian format as it matches ISO)
+
+        // Format the time for the file name (HHMMSS) in 24-hour format
         const timeForFilename = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false })
-                        .replace(/:/g, ''); // Remove colon
+                                    .replace(/:/g, ''); // Remove colons
 
         // Format the date for the default text (YYYY-MM-DD)
-        const formattedDateForText = now.toISOString().split("T")[0]; // YYYY-MM-DD
+        const formattedDateForText = now.toLocaleDateString('en-CA'); // YYYY-MM-DD
 
         // Format the time for the default text in 24-hour format
         const formattedTimeForText = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
